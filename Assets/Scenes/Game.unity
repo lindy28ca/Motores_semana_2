@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 395988753}
   - component: {fileID: 395988752}
   - component: {fileID: 395988754}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,6 +423,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocidad: 4.08
+  distancia: 1.5
+  FuerzaSalto: 9
+  layer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!212 &1684623910
 SpriteRenderer:
   m_ObjectHideFlags: 0
