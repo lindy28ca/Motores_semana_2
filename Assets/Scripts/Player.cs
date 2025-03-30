@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
 
     [SerializeField] private GameObject ganaste;
     [SerializeField] private GameObject perdiste;
+
+    private bool daño;
+    public bool Daño => daño;
     private void Awake()
     {
         rigidbody2 = GetComponent<Rigidbody2D>();
@@ -37,6 +40,10 @@ public class Player : MonoBehaviour
         {
             perdiste.SetActive(true);
             Time.timeScale = 0;
+        }
+        if (daño)
+        {
+            Vida -= Time.deltaTime;
         }
     }
     private void FixedUpdate()
@@ -82,13 +89,23 @@ public class Player : MonoBehaviour
             ganaste.SetActive(true);
             Time.timeScale = 0;
         }
-
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Color") && !ComprobarColor(collision.gameObject.GetComponent<SpriteRenderer>().color))
+        {
+            daño = true;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
         if (collision.gameObject.CompareTag("Color"))
         {
-            Vida-=Time.deltaTime;
+            daño = false;
         }
+    }
+    private bool ComprobarColor(Color color)
+    {
+        return sr.color == color;
     }
 }
