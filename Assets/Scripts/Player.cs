@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask layer;
     private bool dobleSalto;
 
+    [SerializeField] private int Vida;
     
     private void Awake()
     {
