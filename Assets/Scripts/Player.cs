@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    SpriteRenderer sr;
     Rigidbody2D rigidbody2;
     [SerializeField] private float Velocidad;
     private float horizontal;
@@ -11,10 +12,12 @@ public class Player : MonoBehaviour
     private bool salto;
     [SerializeField] private LayerMask layer;
     private bool dobleSalto;
+
     
     private void Awake()
     {
         rigidbody2 = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
     private void Update()
     {
@@ -50,5 +53,9 @@ public class Player : MonoBehaviour
     private bool ComprobarPiso()
     {
         return Physics2D.Raycast(transform.position, Vector2.down, distancia, layer);
+    }
+    public void CambiarColor(Color color)
+    {
+        sr.color = color;
     }
 }
