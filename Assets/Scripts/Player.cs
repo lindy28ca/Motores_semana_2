@@ -1,5 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     SpriteRenderer sr;
@@ -13,8 +14,12 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask layer;
     private bool dobleSalto;
 
-    [SerializeField] private int Vida;
-    
+    [SerializeField] private float Vida;
+
+    [SerializeField] private Image barradevida;
+
+    [SerializeField] private GameObject ganaste;
+    [SerializeField] private GameObject perdiste;
     private void Awake()
     {
         rigidbody2 = GetComponent<Rigidbody2D>();
@@ -22,10 +27,16 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
+        barradevida.fillAmount =(float) Vida / 10;
         horizontal = Input.GetAxis("Horizontal");
         if (Input.GetKeyDown(KeyCode.Space))
         {
             salto = true;
+        }
+        if (Vida <= 0)
+        {
+            perdiste.SetActive(true);
+            Time.timeScale = 0;
         }
     }
     private void FixedUpdate()
@@ -58,5 +69,26 @@ public class Player : MonoBehaviour
     public void CambiarColor(Color color)
     {
         sr.color = color;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Limite"))
+        {
+            perdiste.SetActive(true);
+            Time.timeScale = 0;
+        }
+        if (collision.gameObject.CompareTag("Ganaste"))
+        {
+            ganaste.SetActive(true);
+            Time.timeScale = 0;
+        }
+
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Color"))
+        {
+            Vida-=Time.deltaTime;
+        }
     }
 }
