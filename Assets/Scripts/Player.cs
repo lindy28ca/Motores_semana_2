@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 public class Player : MonoBehaviour
@@ -14,36 +14,41 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask layer;
     private bool dobleSalto;
 
-    [SerializeField] private float Vida;
+    [SerializeField] private float vida;
 
-    [SerializeField] private Image barradevida;
+    public static event Action Perdiste;
+    public static event Action Ganaste;
+    public static event Action Puntos;
+    public static event Action Corazones;
+    public static event Action<float> Vida;
 
-    [SerializeField] private GameObject ganaste;
-    [SerializeField] private GameObject perdiste;
 
-    private bool daño;
-    public bool Daño => daño;
+    private bool damage;
+    public bool Damage => damage;
     private void Awake()
     {
         rigidbody2 = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
     }
+    private void Start()
+    {
+        Vida?.Invoke(vida);
+    }
     private void Update()
     {
-        barradevida.fillAmount =(float) Vida / 10;
         horizontal = Input.GetAxis("Horizontal");
         if (Input.GetKeyDown(KeyCode.Space))
         {
             salto = true;
         }
-        if (Vida <= 0)
+        if (vida <= 0)
         {
-            perdiste.SetActive(true);
-            Time.timeScale = 0;
+            Perdiste?.Invoke();
         }
-        if (daño)
+        if (damage)
         {
-            Vida -= Time.deltaTime;
+            vida -= Time.deltaTime;
+            Vida?.Invoke(vida);
         }
     }
     private void FixedUpdate()
@@ -81,27 +86,39 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Limite"))
         {
-            perdiste.SetActive(true);
-            Time.timeScale = 0;
+            Perdiste?.Invoke();
         }
         if (collision.gameObject.CompareTag("Ganaste"))
         {
-            ganaste.SetActive(true);
-            Time.timeScale = 0;
+            Ganaste?.Invoke();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Moneda"))
+        {
+            Puntos?.Invoke();
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Corazon"))
+        {
+            ++vida;
+            Vida?.Invoke(vida);
+            Destroy(collision.gameObject);
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Color") && !ComprobarColor(collision.gameObject.GetComponent<SpriteRenderer>().color))
         {
-            daño = true;
+            damage = true;
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Color"))
         {
-            daño = false;
+            damage = false;
         }
     }
     private bool ComprobarColor(Color color)

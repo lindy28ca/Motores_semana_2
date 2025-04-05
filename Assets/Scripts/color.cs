@@ -3,32 +3,22 @@ using UnityEngine.UI;
 
 public class color : MonoBehaviour
 {
-    [SerializeField] private Button Button1;
-    [SerializeField] private Button Button2;
-
+    private Button Button;
     [SerializeField] private Color color1;
-    [SerializeField] private Color color2;
-
     [SerializeField] private Player player;
-
+    private void Awake()
+    {
+        Button=GetComponent<Button>();
+    }
     private void Start()
     {
-        Button1.onClick.AddListener(CambiarColor1);
-        Button2.onClick.AddListener(CambiarColor2);
+        Button.onClick.AddListener(CambiarColor);
     }
-
-    private void CambiarColor1()
+    private void CambiarColor()
     {
-        if (!player.Daño)
+        if (!player.Damage)
         {
             player.CambiarColor(color1);
-        }
-    }
-    private void CambiarColor2()
-    {
-        if (!player.Daño)
-        {
-            player.CambiarColor(color2);
         }
     }
 }
