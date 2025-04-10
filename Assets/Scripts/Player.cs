@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     private SpriteRenderer sr;
@@ -33,13 +34,27 @@ public class Player : MonoBehaviour
     {
         Vida?.Invoke(vida);
     }
+    private void Movimiento(float movimiento)
+    {
+        horizontal = movimiento;
+    }
+    private void Saltos(bool salto)
+    {
+        Debug.Log(salto);
+        this.salto = salto;
+    }
+    private void OnEnable()
+    {
+        InputReader.movimiento += Movimiento;
+        InputReader.saltos += Saltos;
+    }
+    private void OnDisable()
+    {
+        InputReader.movimiento -= Movimiento;
+        InputReader.saltos -= Saltos;
+    }
     private void Update()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            salto = true;
-        }
         if (vida <= 0)
         {
             Perdiste?.Invoke();
@@ -69,6 +84,7 @@ public class Player : MonoBehaviour
         }
         salto = false;
     }
+
     private void Salto()
     {
         rigidbody2.AddForce(Vector2.up * FuerzaSalto, ForceMode2D.Impulse);

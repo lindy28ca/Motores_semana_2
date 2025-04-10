@@ -520,7 +520,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca0a456d1054af4ab291d295e0132e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color1: {r: 0, g: 0.9607844, b: 0.18431373, a: 1}
+  Button: {fileID: 0}
+  color1:
+    r: 0
+    g: 0.9607844
+    b: 0.18431373
+    a: 1
   player: {fileID: 1684623909}
 --- !u!4 &47737661 stripped
 Transform:
@@ -656,8 +661,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fff1338e5b9e624b8dbe4bc28db7b50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textito: {fileID: 1247139504}
-  puntos: 0
 --- !u!1 &84132053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,6 +1537,129 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2621514561382131895, guid: b2f88f3a88445d14598325da6d4d42cc, type: 3}
   m_PrefabInstance: {fileID: 1126032751}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &372186475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 372186477}
+  - component: {fileID: 372186476}
+  - component: {fileID: 372186478}
+  m_Layer: 0
+  m_Name: InputReader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &372186476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372186475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 4de8027edcf8b694695cdd317a82b87d, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 372186478}
+        m_TargetAssemblyTypeName: InputReader, Assembly-CSharp
+        m_MethodName: Saltos
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3ac2c9e1-63d1-4f4c-a715-84c06879a77a
+    m_ActionName: Game/Jump[/Keyboard/space,/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 372186478}
+        m_TargetAssemblyTypeName: InputReader, Assembly-CSharp
+        m_MethodName: Movimiento
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c678ec44-b996-4791-92d1-d463d3d33593
+    m_ActionName: Game/Movement
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 372186478}
+        m_TargetAssemblyTypeName: InputReader, Assembly-CSharp
+        m_MethodName: CambiarColor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ffabdc4d-ad22-4d57-8cca-29e598041afa
+    m_ActionName: Game/New action[/Keyboard/downArrow,/Keyboard/rightArrow]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Game
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!4 &372186477
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372186475}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 90.02076, y: -15.131322, z: 1.0197654}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &372186478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372186475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa73646bc6af97542921f7cd09d96473, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &380664369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1957,6 +2083,7 @@ GameObject:
   - component: {fileID: 429047642}
   - component: {fileID: 429047641}
   - component: {fileID: 429047644}
+  - component: {fileID: 429047645}
   m_Layer: 0
   m_Name: Square (12)
   m_TagString: Color
@@ -2097,6 +2224,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &429047645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429047640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f321859f6cef4f4d8c5f0f7eb1301ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &450436305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2530,6 +2669,7 @@ GameObject:
   - component: {fileID: 569435406}
   - component: {fileID: 569435405}
   - component: {fileID: 569435408}
+  - component: {fileID: 569435409}
   m_Layer: 0
   m_Name: Square (14)
   m_TagString: Color
@@ -2670,6 +2810,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &569435409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569435404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f321859f6cef4f4d8c5f0f7eb1301ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &633645069
 GameObject:
   m_ObjectHideFlags: 0
@@ -2821,6 +2973,7 @@ GameObject:
   - component: {fileID: 635449656}
   - component: {fileID: 635449655}
   - component: {fileID: 635449654}
+  - component: {fileID: 635449657}
   m_Layer: 0
   m_Name: Square (16)
   m_TagString: Color
@@ -2951,7 +3104,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.9607844, g: 0, b: 0.078431375, a: 1}
+  m_Color: {r: 0.9607844, g: 0, b: 0.08627451, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2961,6 +3114,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &635449657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635449652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f321859f6cef4f4d8c5f0f7eb1301ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &644579674
 GameObject:
   m_ObjectHideFlags: 0
@@ -3918,7 +4083,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca0a456d1054af4ab291d295e0132e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color1: {r: 0, g: 0.078431375, b: 0.9607844, a: 1}
+  Button: {fileID: 0}
+  color1:
+    r: 0
+    g: 0.078431375
+    b: 0.9607844
+    a: 1
   player: {fileID: 1684623909}
 --- !u!4 &830974915 stripped
 Transform:
@@ -4226,6 +4396,7 @@ GameObject:
   - component: {fileID: 984321415}
   - component: {fileID: 984321414}
   - component: {fileID: 984321417}
+  - component: {fileID: 984321418}
   m_Layer: 3
   m_Name: Square (4)
   m_TagString: Color
@@ -4366,6 +4537,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &984321418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984321413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f321859f6cef4f4d8c5f0f7eb1301ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &995034053
 GameObject:
   m_ObjectHideFlags: 0
@@ -4500,7 +4683,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca0a456d1054af4ab291d295e0132e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color1: {r: 0.9607844, g: 0, b: 0.078431375, a: 1}
+  Button: {fileID: 0}
+  color1:
+    r: 0.9607844
+    g: 0
+    b: 0.078431375
+    a: 1
   player: {fileID: 1684623909}
 --- !u!1001 &1010388193
 PrefabInstance:
@@ -5078,6 +5266,7 @@ GameObject:
   - component: {fileID: 1139945071}
   - component: {fileID: 1139945070}
   - component: {fileID: 1139945073}
+  - component: {fileID: 1139945074}
   m_Layer: 0
   m_Name: Square (15)
   m_TagString: Color
@@ -5218,6 +5407,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1139945074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139945069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f321859f6cef4f4d8c5f0f7eb1301ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1146997247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6107,6 +6308,11 @@ MonoBehaviour:
   perdiste: {fileID: 1657591257}
   ganaste: {fileID: 1504204300}
   Textpuntos: {fileID: 1247139504}
+  colores:
+  - {r: 0.9607844, g: 0, b: 0.08627451, a: 1}
+  - {r: 0, g: 0.078431375, b: 0.9607844, a: 1}
+  - {r: 0, g: 0.9607844, b: 0.18431373, a: 1}
+  player: {fileID: 1684623909}
 --- !u!4 &1373970604
 Transform:
   m_ObjectHideFlags: 0
@@ -6570,6 +6776,7 @@ GameObject:
   - component: {fileID: 1584066613}
   - component: {fileID: 1584066612}
   - component: {fileID: 1584066615}
+  - component: {fileID: 1584066616}
   m_Layer: 3
   m_Name: Square (7)
   m_TagString: Color
@@ -6710,6 +6917,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1584066616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584066611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f321859f6cef4f4d8c5f0f7eb1301ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1590152606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7392,6 +7611,7 @@ GameObject:
   - component: {fileID: 1913387346}
   - component: {fileID: 1913387345}
   - component: {fileID: 1913387347}
+  - component: {fileID: 1913387348}
   m_Layer: 0
   m_Name: Square (19)
   m_TagString: Color
@@ -7501,7 +7721,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.9607844, g: 0, b: 0.078431375, a: 1}
+  m_Color: {r: 0.9607844, g: 0, b: 0.08627451, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7532,6 +7752,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1913387348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913387343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f321859f6cef4f4d8c5f0f7eb1301ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1915319409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1569097202121632657, guid: 940e4f32a5c72f044b4fe6ff17ab5241, type: 3}
@@ -7879,6 +8111,7 @@ GameObject:
   - component: {fileID: 1940071963}
   - component: {fileID: 1940071965}
   - component: {fileID: 1940071966}
+  - component: {fileID: 1940071967}
   m_Layer: 0
   m_Name: Square (17)
   m_TagString: Color
@@ -8019,6 +8252,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1940071967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940071961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f321859f6cef4f4d8c5f0f7eb1301ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1941280836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8105,6 +8350,7 @@ GameObject:
   - component: {fileID: 1952618703}
   - component: {fileID: 1952618702}
   - component: {fileID: 1952618705}
+  - component: {fileID: 1952618706}
   m_Layer: 3
   m_Name: Square
   m_TagString: Color
@@ -8245,6 +8491,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1952618706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952618701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f321859f6cef4f4d8c5f0f7eb1301ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2013261162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8982,3 +9240,4 @@ SceneRoots:
   - {fileID: 148450637}
   - {fileID: 1373970604}
   - {fileID: 1126203801}
+  - {fileID: 372186477}
