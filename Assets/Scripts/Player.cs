@@ -3,8 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
-    SpriteRenderer sr;
-    Rigidbody2D rigidbody2;
+    private SpriteRenderer sr;
+    private Rigidbody2D rigidbody2;
     [SerializeField] private float Velocidad;
     private float horizontal;
     [SerializeField] private float distancia;
@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
     public static event Action Puntos;
     public static event Action Corazones;
     public static event Action<float> Vida;
-
 
     private bool damage;
     public bool Damage => damage;

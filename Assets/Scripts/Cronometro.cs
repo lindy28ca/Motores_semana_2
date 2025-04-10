@@ -4,10 +4,9 @@ using TMPro;
 public class Cronometro : MonoBehaviour
 {
     private float tiempo;
-    [SerializeField] TMP_Text text;
-
-    [SerializeField] TMP_Text ganaste;
-    [SerializeField] TMP_Text perdiste;
+    [SerializeField] private TMP_Text text;
+    [SerializeField] private TMP_Text ganaste;
+    [SerializeField] private TMP_Text perdiste;
     private void Update()
     {
         if (Time.timeScale == 0)
